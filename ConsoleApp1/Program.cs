@@ -10,8 +10,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
             Person obj = new Person("name", "familia", System.DateTime.Now);
             Person obj1 = new Person();
-        }
+
+            string n = obj.ToString();
+
+            Console.WriteLine(n);
+         }
 }}

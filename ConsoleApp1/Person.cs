@@ -8,9 +8,9 @@ namespace ConsoleApp1
 {
     class Person
     {
-        private string Name;
-        private string Surname;
-        private DateTime BDate;
+        private string _name;
+        private string _surname;
+        private DateTime _bDate;
 
         public Person(string name, string surname, System.DateTime bDate)
         {
@@ -25,59 +25,49 @@ namespace ConsoleApp1
             Surname = "myska";
             BDate = new DateTime(2005, 10, 4);
         }
-        public string name
+        public string Name
         {
             get
             {
-                return Name;
+                return _name;
             }
 
             set
             {
-                Name = value;
+                _name = value;
             }
         }
-        public string surname
+        public string Surname
         {
             get
             {
-                return Surname;
+                return _surname;
             }
             set
             {
-                Surname = value;
+                _surname = value;
             }
         }
-        public System.DateTime bDate
+        public DateTime BDate
         {
             get
             {
-                return BDate;
+                return _bDate;
             }
             set
             {
-                BDate = value;
-            }
-        }
-        public int intbDate
-        {
-            get
-            {
-                return BDate.Year;
-            }
-            set
-            {
-                BDate = new DateTime(value, BDate.Month, BDate.Day);
+                _bDate = value;
             }
         }
         public string ToShortString()
 
         {
-            return name + " " + Surname;
+            string result= _name + " " + Surname;
+            return result;
         }
         public override string ToString()
         {
-            return string.Format(name, Surname, BDate);
+            return string.Format(_name, Surname, BDate);
         }
     }
 }

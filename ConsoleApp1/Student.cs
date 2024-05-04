@@ -8,6 +8,7 @@ namespace ConsoleApp1
 {
     class Student
     {
+        private Exam[] _infoexam;
 
         private Person DataStudent { get; set; }
         private Education FormOfEducation { get; set; }
@@ -42,14 +43,14 @@ namespace ConsoleApp1
             get { return _groupnumber; }
             set { _groupnumber = value; }
         }
-        private Exam[] _infoexam
-        {
-            get { return _infoexam; }
-            set { _infoexam = value; }
-        }
         private double mark
         {
-            get { return this.mark; }
+            get { return _infoexam.Length > 0 ? _infoexam.Average(e => e.mark) : 0; }
+        }
+        private void AddExams(params Exam[] newExam) 
+        {
+            //infoexam.Length
+         //   this._infoexam.AddExams(_infoexam);
         }
     }
 }
